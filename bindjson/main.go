@@ -17,7 +17,7 @@ type Boy struct {
 
 func handleBoy(c *gin.Context) {
 	var boy Boy
-	if err := c.ShouldBind(&boy); err == nil {
+	if err := c.BindJSON(&boy); err == nil {
 		//c.String(200, "%v", boy)
 		c.JSON(200, gin.H{
 			"name":     boy.Name,
